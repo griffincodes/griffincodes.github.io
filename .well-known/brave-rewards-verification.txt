@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: griffincodes.github.io
+Token: 61abdec1f6ea8cfaa230cb3071b4387d8581b45222033a46395cac60e03434c2
