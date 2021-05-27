@@ -1,25 +1,94 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Griffin Larson</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;500;900&display=swap" rel="stylesheet">
-	<script src="https://kit.fontawesome.com/4e4ccd0c03.js" crossorigin="anonymous"></script>
-	<link rel="shortcut icon" type="img/png" href="drinking milk.png">
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-	<div id="container">
-		<img id="pfp" src="drinking milk.png">
-		<h1>Griffin Larson</h1>
-		<h3>he/him • 🏊‍♂️ swimmer • 🎥 filmmaker & video editor • 💻 tech enthusiast</h3>
-		<div id="socials">
-			<div><i class="fab fa-instagram"></i><a href="https://www.instagram.com/g.larson_" target="_blank">g.larson_</a></div>
-			<div><i class="fab fa-youtube"></i><a href="https://www.youtube.com/channel/UCLR72Qr41uKghokN9h646vg" target="_blank">Griffin Larson</a></div>
-			<div><i class="fab fa-discord"></i>GiffiCheez#8532</div>
-		</div>
-	</div>
-</body>
+<html lang="en">
+    <head prefix="og: https://ogp.me/ns#">
+        <!-- Search Engine -->
+        <meta name="description" content="I'm a technology-lover, swimmer, photographer, videographer, video editor, YouTube-watcher, occasional gamer, and more.">
+        <meta name="image" content="https://griffinlarson.com/img/image.png">
+        
+        <!-- Schema.org for Google -->
+        <meta itemprop="name" content="Griffin Larson">
+        <meta itemprop="description" content="I'm a technology-lover, swimmer, photographer, videographer, video editor, YouTube-watcher, occasional gamer, and more.">
+        <meta itemprop="image" content="https://griffinlarson.com/img/image.png">
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Griffin Larson">
+        <meta name="twitter:description" content="I'm a technology-lover, swimmer, photographer, videographer, video editor, YouTube-watcher, occasional gamer, and more.">
+        <meta name="twitter:image:src" content="https://griffinlarson.com/img/site.png">
+
+        <!-- Open Graph -->
+        <meta name="og:title" content="Griffin Larson">
+        <meta name="og:description" content="I'm a technology-lover, swimmer, photographer, videographer, video editor, YouTube-watcher, occasional gamer, and more.">
+        <meta name="og:image" content="https://griffinlarson.com/img/site.png">
+        <meta name="og:url" content="https://griffinlarson.com">
+        <meta name="og:site_name" content="Griffin Larson">
+        <meta name="og:type" content="website">
+
+        <!-- General -->
+        <title>Griffin Larson</title>
+        <meta name="color-scheme" content="dark light">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- CSS and external references -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/4e4ccd0c03.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="style.css">
+
+        <!-- Icons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+        <link rel="manifest" href="img/site.webmanifest">
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <meta name="msapplication-TileColor" content="#2d89ef">
+        <meta name="msapplication-TileImage" content="img/mstile-144x144.png">
+        <meta name="msapplication-config" content="img/browserconfig.xml">
+        <meta name="theme-color" content="#3961d2">
+    </head>
+    <body>
+        <div class="hero-bg">
+            <p class="btn-toggle" title="toggle light/dark mode">🌓 dark/light mode</p>
+            <div class="hero-text">
+                <img src="img/image.png" alt="a picture of me" title="a picture of me">
+                <h1 title="that's my name">Griffin Larson</h1>
+                <h2 title="my pronouns">he/him</h2>
+                <h3>🏊‍♂️ swimmer &middot; 🎥 filmmaker & video editor &middot; 💻 tech enthusiast</h3>
+                <h4>
+                    <a href="https://instagram.com/g.larson_" target="_blank" class="iconlink"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UCLR72Qr41uKghokN9h646vg" target="_blank" class="iconlink"><i class="fab fa-youtube"></i></a>
+                    <a href="https://github.com/griffin-larson" target="_blank" class="iconlink"><i class="fab fa-github"></i></a>
+                    <a href="https://discord.bio/p/griffinl" target="_blank" class="iconlink"><i class="fab fa-discord"></i></a>
+                    <a href="https://steamcommunity.com/id/gifficheez/" target="_blank" class="iconlink"><i class="fab fa-steam"></i></a>
+                </h4>
+            </div>
+        </div>
+        <script>
+            const btn = document.querySelector(".btn-toggle");
+            const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+            const currentTheme = localStorage.getItem("theme");
+            if (currentTheme == "dark") {
+                document.body.classList.toggle("dark-theme");
+            } else if (currentTheme == "light") {
+                document.body.classList.toggle("light-theme");
+            }
+            
+            btn.addEventListener("click", function () {
+                if (prefersDarkScheme.matches) {
+                    document.body.classList.toggle("light-theme");
+                    var theme = document.body.classList.contains("light-theme")
+                    ? "light"
+                    : "dark";
+                } else {
+                    document.body.classList.toggle("dark-theme");
+                    var theme = document.body.classList.contains("dark-theme")
+                    ? "dark"
+                    : "light";
+                }
+                localStorage.setItem("theme", theme);
+            });
+        </script>
+    </body>
 </html>
